@@ -1,0 +1,492 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How does AI impact our critical thinking?</title>
+<meta name="description" content="Investigating the Effects of LLM Use on Critical Thinking Under Time Constraints: Access Timing and Time Availability. A CHI 2026 study (n=393) by Jiayin Zhi, Harsh Kumar, and Mina Lee.">
+<link rel="canonical" href="https://criticalthinking-ai.app/">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="How does AI impact our critical thinking?">
+<meta property="og:description" content="A between-subjects experiment (n=393) showing a temporal reversal: whether an LLM augments or undermines critical thinking depends on when it is available and how much time you have.">
+<meta property="og:url" content="https://criticalthinking-ai.app/">
+<meta property="og:image" content="https://criticalthinking-ai.app/assets/bg-hero.png">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="icon" href="./assets/icon1.png" type="image/png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=IBM+Plex+Serif:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+<div id="root">
+<div class="app-container">
+
+<nav class="top-nav">
+  <div class="nav-container">
+    <div class="nav-links">
+      <div class="nav-item dropdown" tabindex="0" role="button" aria-expanded="false" aria-haspopup="true">About
+        <svg class="nav-caret" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <div class="dropdown-menu">
+          <a class="dropdown-item" href="#abstract">Abstract</a>
+          <a class="dropdown-item" href="#background">Background</a>
+          <a class="dropdown-item" href="#study-design">Study Design</a>
+          <a class="dropdown-item" href="#findings">Findings</a>
+          <a class="dropdown-item" href="#implications">Implications</a>
+        </div>
+      </div>
+      <div class="nav-item dropdown" tabindex="0" role="button" aria-expanded="false" aria-haspopup="true">Resources
+        <svg class="nav-caret" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <div class="dropdown-menu">
+          <a class="dropdown-item" href="./resources/#interface">Interface Code</a>
+          <a class="dropdown-item" href="./resources/#data-and-analysis">Data and Analysis</a>
+          <a class="dropdown-item" href="https://drive.google.com/file/d/1a0bivR8x90bY8ymF98oKZTo_c1lDBdV1/view" target="_blank" rel="noopener">Supplementary Materials</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<nav class="spine" aria-label="Sections">
+  <ul>
+    <li><a href="#abstract"><span class="dot"></span><span class="lab">Abstract</span></a></li>
+    <li><a href="#background"><span class="dot"></span><span class="lab">Background</span></a></li>
+    <li><a href="#time-constraints"><span class="dot"></span><span class="lab">Time Constraints</span></a></li>
+    <li><a href="#study-design"><span class="dot"></span><span class="lab">Study Design</span></a></li>
+    <li><a href="#findings"><span class="dot"></span><span class="lab">Findings</span></a></li>
+    <li><a href="#implications"><span class="dot"></span><span class="lab">Implications</span></a></li>
+    <li><a href="#bibtex"><span class="dot"></span><span class="lab">BibTeX</span></a></li>
+  </ul>
+</nav>
+
+<main id="main">
+
+  <!-- ================= HERO ================= -->
+  <section class="hero-section" id="hero-section">
+    <div class="hero-overlay">
+      <div class="hero-inner">
+        <div class="hero-text-block">
+          <h1 class="hero-title">How does AI impact our critical thinking?</h1>
+          <div class="hero-actions">
+            <a href="#abstract" class="btn-primary">About the Paper<span class="btn-chip"><svg class="btn-arrow" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
+          </div>
+        </div>
+        <div class="hero-plot" aria-hidden="true">
+          <svg viewBox="0 0 320 220" fill="none">
+            <line x1="46" y1="184" x2="300" y2="184" stroke="#cfd5e4" stroke-width="1.5"/>
+            <line x1="46" y1="20" x2="46" y2="184" stroke="#cfd5e4" stroke-width="1.5"/>
+            <path d="M92 88 L254 78" stroke="#82cdff" stroke-width="4" stroke-linecap="round"/>
+            <circle cx="92" cy="88" r="6" fill="#82cdff"/><circle cx="254" cy="78" r="6" fill="#82cdff"/>
+            <path d="M92 150 L254 40" stroke="#0144be" stroke-width="4" stroke-linecap="round"/>
+            <circle cx="92" cy="150" r="6" fill="#0144be"/><circle cx="254" cy="40" r="6" fill="#0144be"/>
+            <text x="92" y="206" fill="#ed6500" font-family="IBM Plex Sans, sans-serif" font-size="12.5" font-style="italic" font-weight="500" text-anchor="middle">Insufficient</text>
+            <text x="254" y="206" fill="#008e05" font-family="IBM Plex Sans, sans-serif" font-size="12.5" font-style="italic" font-weight="500" text-anchor="middle">Sufficient</text>
+            <text x="20" y="106" fill="#8b93a3" font-family="IBM Plex Sans, sans-serif" font-size="11" transform="rotate(-90 20 106)" text-anchor="middle">performance</text>
+          </svg>
+        </div>
+        <figure class="hero-figure">
+          <img src="./assets/bg-hero.png" alt="" width="5692" height="3200">
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= ABSTRACT ================= -->
+  <section class="content-section section-abstract" id="abstract">
+    <div class="abstract-top">
+      <h2 class="paper-subtitle"><strong>Investigating the Effects of LLM Use on Critical Thinking Under Time Constraints: Access Timing and Time Availability</strong></h2>
+      <p class="authors-line"><a class="text-link" href="https://jzhi.app/" target="_blank" rel="noopener">Jiayin Zhi</a>, <a class="text-link" href="https://harsh-kumar.com/" target="_blank" rel="noopener">Harsh Kumar</a>, <a class="text-link" href="https://minalee-research.github.io/" target="_blank" rel="noopener">Mina Lee</a></p>
+      <div class="resource-links">
+        <a class="res-btn res-btn-wide" href="https://arxiv.org/pdf/2603.08849" target="_blank" rel="noopener">Paper<svg class="res-icon" viewBox="0 0 1024 1024" width="18" height="20" fill="currentColor" aria-hidden="true"><path d='M842.667 285.867L654.933 98.133C640 83.2 622.933 76.8 601.6 76.8H234.667C194.133 74.667 160 108.8 160 149.333v725.334c0 40.533 34.133 74.666 74.667 74.666h554.666c40.534 0 74.667-34.133 74.667-74.666v-537.6c0-19.2-8.533-38.4-21.333-51.2z m-44.8 44.8c-2.134 2.133-4.267 0-8.534 0H618.667c-6.4 0-10.667-4.267-10.667-10.667V149.333c0-2.133 0-6.4-2.133-8.533 0 0 2.133 0 2.133 2.133l189.867 187.734z m-8.534 554.666H234.667c-6.4 0-10.667-4.266-10.667-10.666V149.333c0-6.4 4.267-10.666 10.667-10.666h311.466c-2.133 4.266-2.133 6.4-2.133 10.666V320c0 40.533 34.133 74.667 74.667 74.667h170.666c4.267 0 6.4 0 10.667-2.134v482.134c0 6.4-4.267 10.666-10.667 10.666z' /><path d='M640 693.333H341.333c-17.066 0-32 14.934-32 32s14.934 32 32 32H640c17.067 0 32-14.933 32-32s-14.933-32-32-32z m0-170.666H341.333c-17.066 0-32 14.933-32 32s14.934 32 32 32H640c17.067 0 32-14.934 32-32s-14.933-32-32-32zM341.333 416h85.334c17.066 0 32-14.933 32-32s-14.934-32-32-32h-85.334c-17.066 0-32 14.933-32 32s14.934 32 32 32z' /></svg></a>
+        <a class="res-btn res-btn-standard" href="https://doi.org/10.1145/3772318.3791796" target="_blank" rel="noopener">DOI<svg class="res-icon" viewBox="0 0 1024 1024" width="18" height="18" fill="currentColor" aria-hidden="true"><path d='M607.934444 417.856853c-6.179746-6.1777-12.766768-11.746532-19.554358-16.910135l-0.01228 0.011256c-6.986111-6.719028-16.47216-10.857279-26.930349-10.857279-21.464871 0-38.864146 17.400299-38.864146 38.864146 0 9.497305 3.411703 18.196431 9.071609 24.947182l-0.001023 0c0.001023 0.001023 0.00307 0.00307 0.005117 0.004093 2.718925 3.242857 5.953595 6.03853 9.585309 8.251941 3.664459 3.021823 7.261381 5.997598 10.624988 9.361205l3.203972 3.204995c40.279379 40.229237 28.254507 109.539812-12.024871 149.820214L371.157763 796.383956c-40.278355 40.229237-105.761766 40.229237-146.042167 0l-3.229554-3.231601c-40.281425-40.278355-40.281425-105.809861 0-145.991002l75.93546-75.909877c9.742898-7.733125 15.997346-19.668968 15.997346-33.072233 0-23.312962-18.898419-42.211381-42.211381-42.211381-8.797363 0-16.963347 2.693342-23.725354 7.297197-0.021489-0.045025-0.044002-0.088004-0.066515-0.134053l-0.809435 0.757247c-2.989077 2.148943-5.691629 4.669346-8.025791 7.510044l-78.913281 73.841775c-74.178443 74.229608-74.178443 195.632609 0 269.758863l3.203972 3.202948c74.178443 74.127278 195.529255 74.127278 269.707698 0l171.829484-171.880649c74.076112-74.17435 80.357166-191.184297 6.282077-265.311575L607.934444 417.856853z' /><path d='M855.61957 165.804257l-3.203972-3.203972c-74.17742-74.178443-195.528232-74.178443-269.706675 0L410.87944 334.479911c-74.178443 74.178443-78.263481 181.296089-4.085038 255.522628l3.152806 3.104711c3.368724 3.367701 6.865361 6.54302 10.434653 9.588379 2.583848 2.885723 5.618974 5.355985 8.992815 7.309476 0.025583 0.020466 0.052189 0.041956 0.077771 0.062422l0.011256-0.010233c5.377474 3.092431 11.608386 4.870938 18.257829 4.870938 20.263509 0 36.68962-16.428158 36.68962-36.68962 0-5.719258-1.309832-11.132548-3.645017-15.95846l0 0c-4.850471-10.891048-13.930267-17.521049-20.210297-23.802102l-3.15383-3.102664c-40.278355-40.278355-24.982998-98.79612 15.295358-139.074476l171.930791-171.830507c40.179095-40.280402 105.685018-40.280402 145.965419 0l3.206018 3.152806c40.279379 40.281425 40.279379 105.838513 0 146.06775l-75.686796 75.737962c-10.296507 7.628748-16.97358 19.865443-16.97358 33.662681 0 23.12365 18.745946 41.87062 41.87062 41.87062 8.048303 0 15.563464-2.275833 21.944801-6.211469 0.048095 0.081864 0.093121 0.157589 0.141216 0.240477l1.173732-1.083681c3.616364-2.421142 6.828522-5.393847 9.529027-8.792247l79.766718-73.603345C929.798013 361.334535 929.798013 239.981676 855.61957 165.804257z' /></svg></a>
+        <a class="res-btn res-btn-standard" href="#bibtex">Bib<svg class="res-icon" viewBox="0 0 1024 1024" width="18" height="18" fill="currentColor" aria-hidden="true"><path d='M156.09136 606.57001a457.596822 457.596822 0 0 1 221.680239-392.516385 50.844091 50.844091 0 1 1 50.844091 86.943396 355.90864 355.90864 0 0 0-138.804369 152.532274h16.77855a152.532274 152.532274 0 1 1-152.532274 152.532274z m406.752731 0a457.596822 457.596822 0 0 1 221.680239-392.007944 50.844091 50.844091 0 1 1 50.844091 86.943396 355.90864 355.90864 0 0 0-138.804369 152.532274h16.77855a152.532274 152.532274 0 1 1-152.532274 152.532274z' /></svg></a>
+        <a class="res-btn res-btn-lg" href="./resources/">Resources<svg class="res-icon" viewBox="0 0 1027 1024" width="24" height="16" fill="currentColor" aria-hidden="true"><path d='M321.828571 226.742857c-14.628571-14.628571-36.571429-14.628571-51.2 0L7.314286 482.742857c-14.628571 14.628571-14.628571 36.571429 0 51.2l256 256c14.628571 14.628571 36.571429 14.628571 51.2 0 14.628571-14.628571 14.628571-36.571429 0-51.2L87.771429 512l234.057142-234.057143c7.314286-14.628571 7.314286-36.571429 0-51.2z m263.314286 0c-14.628571 0-36.571429 7.314286-43.885714 29.257143l-131.657143 497.371429c-7.314286 21.942857 7.314286 36.571429 29.257143 43.885714s36.571429-7.314286 43.885714-29.257143l131.657143-497.371429c7.314286-14.628571-7.314286-36.571429-29.257143-43.885714z m431.542857 256l-256-256c-14.628571-14.628571-36.571429-14.628571-51.2 0-14.628571 14.628571-14.628571 36.571429 0 51.2L936.228571 512l-234.057142 234.057143c-14.628571 14.628571-14.628571 36.571429 0 51.2 14.628571 14.628571 36.571429 14.628571 51.2 0l256-256c14.628571-14.628571 14.628571-43.885714 7.314285-58.514286z' /></svg></a>
+      </div>
+    </div>
+    <p class="body-text">The impact of large language models (LLMs) on critical thinking has provoked growing attention, yet this impact on <strong>actual performance</strong> may not be uniformly negative or positive. Particularly, the role of time&mdash;the temporal context under which an LLM is provided&mdash;remains overlooked. In a between-subjects experiment (n=393), we examined two types of time constraints for a critical thinking task requiring participants to make a reasoned decision for a real-world civic scenario based on diverse documents: (1) <strong>LLM access timing</strong>&mdash;an LLM available only at the beginning (early), throughout (continuous), near the end (late), or not at all (no LLM), and (2) <strong>time availability</strong>&mdash;insufficient or sufficient time for the task. We found a temporal reversal: <strong>LLM access from the start (early, continuous)</strong> improved performance under time pressure but impaired it with sufficient time, whereas beginning the task independently (late, no LLM) showed the opposite pattern. These findings demonstrate that time constraints fundamentally shape whether an LLM augments or undermines critical thinking, making time a central consideration when designing LLM support and evaluating human-AI collaboration in cognitive tasks.</p>
+  </section>
+
+  <!-- ================= BACKGROUND ================= -->
+  <section class="content-section" id="background">
+    <h2 class="section-heading">Critical Thinking in the Age of AI</h2>
+    <div class="section-body">
+      <p class="body-text">Critical thinking is the ability to <strong>analyze, evaluate, and synthesize</strong> diverse &mdash; and sometimes conflicting &mdash; information to <strong>reach reasoned decisions</strong> (<a class="text-link" href="https://doi.org/10.3389/feduc.2020.00156" target="_blank" rel="noopener">Braun et al., 2020</a>; <a class="text-link" href="https://doi.org/10.1207/s15430421tip4104_2" target="_blank" rel="noopener">Krathwohl et al., 2010</a>). Whether navigating contradictory news stories, making purchase decisions, or writing research reports, we constantly encounter situations that demand critical thinking. Consider an everyday scenario: you need to decide whether to accept an offer or a proposal, and you have a stack of sources &mdash; reports, testimonials, analyses &mdash; each offering a different perspective. You begin reading, distill key arguments, move between sources to weigh trade-offs, check your own biases, and ultimately revise and communicate your reasoning. Each of these facets reflects the inherently non-linear process of critical thinking.</p>
+
+      <div class="bg-icons-row">
+        <div class="bg-icon"><img src="./assets/icon1.png" alt=""></div>
+        <div class="bg-icon"><img src="./assets/icon2.png" alt=""></div>
+        <div class="bg-icon"><img src="./assets/icon3.png" alt=""></div>
+        <div class="bg-icon"><img src="./assets/icon4.png" alt=""></div>
+      </div>
+
+      <p class="body-text">Today, critical thinking is highly exposed to large language models (LLMs), as it has been the most frequently required capability in tasks that users bring to popular LLM chatbots (<a class="text-link" href="https://arxiv.org/abs/2503.04761" target="_blank" rel="noopener">Handa et al., 2025</a>). There is growing attention to the <strong>benefits and risks</strong> of using AI for critical thinking and human reasoning. On one hand, AI offers new efficiencies in consuming and producing information. On the other hand, concerns are rising that outsourcing cognitive activities to AI may not lead to better thinking outcomes.</p>
+
+      <p class="body-text">So, what are the <strong>actual consequences</strong> for people&rsquo;s critical thinking performance when using AI?</p>
+    </div>
+  </section>
+
+  <!-- ================= TIME CONSTRAINTS ================= -->
+  <section class="content-section" id="time-constraints">
+    <h2 class="section-heading">Time Constraints</h2>
+    <div class="section-body">
+      <p class="body-text">To answer this question, we cannot simply compare using an LLM versus not using one to label the impact as positive or negative. Time constraints &mdash; the temporal context in which an LLM is provided &mdash; can fundamentally shape its impact on human-AI collaboration for learning and thinking outcomes. We identified two crucial types of time constraints: the <strong>timing of LLM access</strong> and the <strong>time availability</strong> for task completion.</p>
+
+      <p class="body-text">Within the dimension of access timing, comparing &ldquo;using an LLM&rdquo; versus &ldquo;not using one&rdquo; is effectively comparing continuous LLM access against no access at all. Early LLM access &mdash; where the LLM is only available at the beginning of a task &mdash; may be particularly beneficial, serving as initial scaffolding that handles groundwork and potentially frees up cognitive resources for deeper deliberation (<a class="text-link" href="https://doi.org/10.1037/mac0000199" target="_blank" rel="noopener">Imundo et al., 2024</a>; <a class="text-link" href="https://doi.org/10.48550/arXiv.2502.12447" target="_blank" rel="noopener">Singh et al., 2025</a>). Late LLM access &mdash; where the LLM is only available near the end of a task &mdash; may also prove beneficial. Prior studies on other cognitive tasks, such as math problem solving (<a class="text-link" href="https://doi.org/10.1007/978-3-031-98459-4_5" target="_blank" rel="noopener"><span>Kumar et al., 2025</span></a>) and creative writing (<a class="text-link" href="https://doi.org/10.1145/3706598.3713146" target="_blank" rel="noopener">Qin et al., 2025</a>), have shown that providing LLM access after participants&rsquo; independent attempts improved their performance.</p>
+
+      <p class="body-text">The second type of time constraint is time availability. Most prior work does not explicitly constrain time availability for task completion, or provides sufficient time. Yet time pressure is a pervasive reality in our daily life and work, and it can shift people from deliberative reasoning to heuristic processing (<a class="text-link" href="https://doi.org/10.3390/jintelligence11060120" target="_blank" rel="noopener">Gonthier, 2023</a>; <a class="text-link" href="https://doi.org/10.1016/0022-1031(92)90045-L" target="_blank" rel="noopener">Karau and Kelly, 1992</a>; <a class="text-link" href="https://doi.org/10.1016/j.jebo.2004.11.013" target="_blank" rel="noopener">Kocher and Sutter, 2006</a>).</p>
+
+      <div class="tc-table-wrap">
+        <div class="tc-responsive-container">
+          <div class="tc-table">
+            <div class="tc-row tc-header-row">
+              <div class="tc-cell tc-corner"></div>
+              <div class="tc-cell tc-col-hd"><strong>Early Access</strong></div>
+              <div class="tc-cell tc-col-hd"><strong>Continuous Access</strong></div>
+              <div class="tc-cell tc-col-hd"><strong>Late Access</strong></div>
+              <div class="tc-cell tc-col-hd tc-col-gray"><strong>No Access</strong></div>
+            </div>
+            <div class="tc-row">
+              <div class="tc-cell tc-row-hd"><strong>Insufficient Time</strong></div>
+              <div class="tc-cell tc-data"></div>
+              <div class="tc-cell tc-data"></div>
+              <div class="tc-cell tc-data"></div>
+              <div class="tc-cell tc-data"><span>🧠 Insufficient &lt; Sufficient </span><span class="nowrap-content">(<a class="text-link" href="https://doi.org/10.3390/jintelligence11060120" target="_blank" rel="noopener"><span>Gonthier, 2023</span></a>)</span></div>
+            </div>
+            <div class="tc-row">
+              <div class="tc-cell tc-row-hd"><strong>Sufficient Time</strong></div>
+              <div class="tc-cell tc-data"></div>
+              <div class="tc-cell tc-data"><strong>💡 Continuous &lt; Late </strong>(<a class="text-link" href="https://doi.org/10.1145/3706598.3713146" target="_blank" rel="noopener"><span>Qin et al., 2025</span></a>)</div>
+              <div class="tc-cell tc-data"><strong>💡 Continuous &lt; Late </strong>(<a class="text-link" href="https://doi.org/10.1145/3706598.3713146" target="_blank" rel="noopener"><span>Qin et al., 2025</span></a>)</div>
+              <div class="tc-cell tc-data"><span>🧠 Insufficient &lt; Sufficient </span><span class="nowrap-content">(<a class="text-link" href="https://doi.org/10.3390/jintelligence11060120" target="_blank" rel="noopener"><span>Gonthier, 2023</span></a>)</span></div>
+            </div>
+            <div class="tc-row tc-prior-row">
+              <div class="tc-cell tc-prior-corner"></div>
+              <div class="tc-cell tc-prior-cell"><span class="tc-prior-text"><strong>📐 Early &lt; Late </strong></span>(<a class="text-link" href="https://doi.org/10.1007/978-3-031-98459-4_5" target="_blank" rel="noopener"><span>Kumar et al., 2025</span></a>)</div>
+              <div class="tc-cell tc-prior-cell"></div>
+              <div class="tc-cell tc-prior-cell"><span class="tc-prior-text"><strong>📐 Early &lt; Late </strong></span>(<a class="text-link" href="https://doi.org/10.1007/978-3-031-98459-4_5" target="_blank" rel="noopener"><span>Kumar et al., 2025</span></a>)</div>
+              <div class="tc-cell tc-prior-cell"></div>
+            </div>
+          </div>
+
+          <div class="tc-mobile-cards">
+            <div class="tc-time-section">
+              <div class="tc-time-heading">Insufficient Time</div>
+              <div class="tc-access-group">
+                <div class="tc-access-heading">No Access</div>
+                <div class="tc-result-card">
+                  <div class="tc-result-title">Research Findings</div>
+                  <div class="tc-result-content"><strong>🧠 Insufficient &lt; Sufficient (</strong><a class="text-link" href="https://doi.org/10.3390/jintelligence11060120" target="_blank" rel="noopener"><span>Gonthier, 2023</span></a><strong>)</strong></div>
+                </div>
+              </div>
+            </div>
+            <div class="tc-time-section">
+              <div class="tc-time-heading">Sufficient Time</div>
+              <div class="tc-access-group">
+                <div class="tc-access-heading">Early Access</div>
+                <div class="tc-result-card">
+                  <div class="tc-result-title">Research Findings</div>
+                  <div class="tc-result-content"><strong>📐 Early &lt; Late (</strong><a class="text-link" href="https://doi.org/10.1007/978-3-031-98459-4_5" target="_blank" rel="noopener"><span>Kumar et al., 2025</span></a><strong>)</strong></div>
+                </div>
+              </div>
+              <div class="tc-access-group">
+                <div class="tc-access-heading">Continuous Access</div>
+                <div class="tc-result-card">
+                  <div class="tc-result-title">Research Findings</div>
+                  <div class="tc-result-content"><strong>💡 Continuous &lt; Late (</strong><a class="text-link" href="https://doi.org/10.1145/3706598.3713146" target="_blank" rel="noopener"><span>Qin et al., 2025</span></a><strong>)</strong></div>
+                </div>
+              </div>
+              <div class="tc-access-group">
+                <div class="tc-access-heading">Late Access</div>
+                <div class="tc-result-card">
+                  <div class="tc-result-title">Research Findings</div>
+                  <div class="tc-result-content"><strong>💡 Continuous &lt; Late (</strong><a class="text-link" href="https://doi.org/10.1145/3706598.3713146" target="_blank" rel="noopener"><span>Qin et al., 2025</span></a><strong>)</strong></div>
+                </div>
+                <div class="tc-result-card">
+                  <div class="tc-result-title">Research Findings</div>
+                  <div class="tc-result-content"><strong>📐 Early &lt; Late (</strong><a class="text-link" href="https://doi.org/10.1007/978-3-031-98459-4_5" target="_blank" rel="noopener"><span>Kumar et al., 2025</span></a><strong>)</strong></div>
+                </div>
+              </div>
+              <div class="tc-access-group">
+                <div class="tc-access-heading">No Access</div>
+                <div class="tc-result-card">
+                  <div class="tc-result-title">Research Findings</div>
+                  <div class="tc-result-content"><strong>🧠 Insufficient &lt; Sufficient (</strong><a class="text-link" href="https://doi.org/10.3390/jintelligence11060120" target="_blank" rel="noopener"><span>Gonthier, 2023</span></a><strong>)</strong></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <p class="table-caption">This table summarizes the directionality of effects in prior work across LLM access timing and time availability. Only studies that explicitly manipulate one of the time constraints are included; empty cells indicate conditions with no recent empirical studies. By the time of our study, these two dimensions were studied in isolation, leaving many combinations unexplored. Our study systematically examines human-AI collaboration for critical thinking across all conditions in the two-dimensional space of time constraints &mdash; see the updated <a class="text-link" href="#research-implications">table</a>.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= STUDY DESIGN ================= -->
+  <section class="content-section" id="study-design">
+    <h2 class="section-heading">Study Design</h2>
+    <div class="section-subsections">
+
+      <div class="subsection">
+        <h3 class="subsection-heading">Experiment Conditions</h3>
+        <div class="aspect-img-wrap" style="aspect-ratio:2300/634">
+          <img src="./assets/experiment-conditions.png" alt="The eight experiment conditions: two levels of time availability crossed with four LLM access timings.">
+        </div>
+        <p class="body-text">We conducted a between-subjects experiment (n=393) to examine the effects of LLM use on critical thinking across both types of time constraints. Time availability was manipulated as <em class="cond time-sufficient">Sufficient</em> (30 minutes) versus <em class="cond time-insufficient">Insufficient</em> (10 minutes), and LLM access timing was divided into <em class="cond cond-early">Early</em>, <em class="cond cond-continuous">Continuous</em>, and <em class="cond cond-late">Late</em> based on thirds of the task duration. These parameters were informed by participant behavior observed in the pilots. Under <em class="cond time-sufficient">Sufficient</em> or <em class="cond time-insufficient">Insufficient</em> time, participants were randomly assigned to one of four LLM access timings: <em class="cond cond-early">Early</em>, <em class="cond cond-continuous">Continuous</em>, <em class="cond cond-late">Late</em>, or <em class="cond cond-none">No</em> LLM access.</p>
+      </div>
+
+      <div class="subsection">
+        <h3 class="subsection-heading">Task</h3>
+        <div class="aspect-img-wrap" style="aspect-ratio:2380/875">
+          <img src="./assets/task-interface.png" alt="Overview of the task interface and the sequence of post-task assessments.">
+        </div>
+        <p class="body-text">To assess critical thinking performance, we employed a task from the performance assessment framework (<a class="text-link" href="https://doi.org/10.3389/feduc.2020.00156" target="_blank" rel="noopener">Braun et al., 2020</a>; <a class="text-link" href="https://doi.org/10.3262/zp2502145" target="_blank" rel="noopener">Ebright-Jones and Cortina, 2025</a>). The task presents a real-world <strong>civic decision-making scenario</strong> in which participants act as city council members deciding whether to accept a company&rsquo;s proposal to address water contamination it caused, in exchange for dropping lawsuits and future liabilities. Participants were provided with a set of documents varying in <strong>relevance</strong> to the decision, <strong>trustworthiness</strong> of the sources, and <strong>stance</strong> toward the proposal (pro, con, or neutral), representing diverse information sources including technical reports, news articles, and government agency brochures. Participants were asked to prepare an <strong>essay explaining their reasoning</strong> behind their decision, based on information drawn from some or all of the documents. Beyond the <strong>Essay</strong> performance, we measured participants&rsquo; free <strong>Recall</strong> of documents, explicit <strong>Evaluation</strong> of each document&rsquo;s characteristics, and <strong>Comprehension</strong> through factual inference. These additional measures capture related cognitive activities that may not be reflected in the essays. See the <a class="text-link" href="https://arxiv.org/pdf/2603.08849" target="_blank" rel="noopener">paper</a> for more details about the measures.</p>
+      </div>
+
+      <div class="subsection">
+        <h3 class="subsection-heading">Interface</h3>
+        <div class="carousel-section">
+          <div class="carousel-container" data-carousel>
+            <div class="carousel-body">
+              <button class="carousel-btn" type="button" aria-label="Previous image" data-dir="-1">
+                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M15 18L9 12L15 6" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </button>
+              <div class="carousel-track-wrap">
+                <div class="carousel-track">
+                  <div class="carousel-item">
+                    <img src="./assets/interface-1.jpg" alt="Task interface with the document viewer on the left, the chatbot on the right, and the essay box below.">
+                    <div class="carousel-caption"><p>Task interface: Instructions of the document viewer (left), LLM-powered chatbot with access to all the documents (right), and essay textbox (bottom). The timer begins after participants click all &ldquo;I understand&rdquo; buttons.</p></div>
+                  </div>
+                  <div class="carousel-item">
+                    <img src="./assets/interface-2.jpg" alt="The task interface showing the countdown timer at the bottom right.">
+                    <div class="carousel-caption"><p>The task interface controls the LLM access and time availability. The timer at the bottom right shows the remaining task time. Participants are automatically taken to the next page when time runs out.</p></div>
+                  </div>
+                  <div class="carousel-item">
+                    <img src="./assets/interface-3.jpg" alt="Recall assessment interface with fields for summarizing each document from memory.">
+                    <div class="carousel-caption"><p>Interface for assessing Recall: Participants can add fields to summarize the main ideas of documents by free recall. Pasting is disabled.</p></div>
+                  </div>
+                  <div class="carousel-item">
+                    <img src="./assets/interface-4.jpg" alt="Evaluation interface for rating each document's relevance, trustworthiness, and stance.">
+                    <div class="carousel-caption"><p>Interface for assessing Evaluation: Participants rate the relevance, trustworthiness, and stance of each document with title provided. They can select &ldquo;I didn&rsquo;t read this&rdquo; for a document.</p></div>
+                  </div>
+                </div>
+              </div>
+              <button class="carousel-btn" type="button" aria-label="Next image" data-dir="1">
+                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M9 6L15 12L9 18" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </button>
+            </div>
+            <div class="carousel-indicators"></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= FINDINGS ================= -->
+  <section class="content-section" id="findings">
+    <h2 class="section-heading">Findings</h2>
+    <div class="section-subsections">
+
+      <div class="subsection">
+        <h3 class="subsection-heading">Task Performance</h3>
+        <p class="body-text">According to the scoring rubrics of the task (<a class="text-link" href="https://doi.org/10.3389/feduc.2020.00156" target="_blank" rel="noopener">Braun et al., 2020</a>; <a class="text-link" href="https://doi.org/10.3262/zp2502145" target="_blank" rel="noopener">Ebright-Jones and Cortina, 2025</a>), participants&rsquo; essays were scored based on the number of valid arguments &mdash; arguments that can be developed from the provided documents. A <strong>Myside Bias</strong> score was derived from each essay to capture the balance of pro and con arguments; a higher score indicates that a participant predominantly presented arguments on one side.</p>
+
+        <p class="body-text">We found a dramatic temporal reversal: under <em class="cond time-insufficient">Insufficient</em> time, <strong>having LLM access from the start</strong> (<em class="cond cond-early">Early</em>, <em class="cond cond-continuous">Continuous</em> LLM access) improved the Essay performance of critical thinking. Yet under <em class="cond time-sufficient">Sufficient</em> time, those who <strong>worked independently first</strong> (<em class="cond cond-late">Late</em>, <em class="cond cond-none">No</em> LLM access) showed better Essay and Recall performance. Moreover, those having LLM access from the start showed minimal gains from <em class="cond time-insufficient">Insufficient</em> to <em class="cond time-sufficient">Sufficient</em> time. These findings suggest that having LLM access from the start limits the benefits of more task time and may prevent deeper internalization of the source documents.</p>
+
+        <p class="body-text">Browse the results for Essay (Essay, Myside Bias, Number of arguments), Recall, Evaluation, and Comprehension performance below. See the <a class="text-link" href="https://arxiv.org/pdf/2603.08849" target="_blank" rel="noopener">paper</a> for details about the stats.</p>
+
+        <div class="carousel-section">
+          <div class="findings-carousel" data-findings-carousel>
+            <div class="findings-carousel-body">
+              <button class="findings-carousel-btn" type="button" aria-label="Previous chart" data-dir="-1">
+                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M15 18L9 12L15 6" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </button>
+              <div class="findings-carousel-image-wrap">
+                <img src="./assets/perf-essay.png" alt="Essay performance by LLM access timing under insufficient and sufficient time.">
+              </div>
+              <button class="findings-carousel-btn" type="button" aria-label="Next chart" data-dir="1">
+                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M9 6L15 12L9 18" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </button>
+            </div>
+            <p class="findings-carousel-caption"></p>
+            <div class="findings-carousel-indicators"></div>
+            <script type="application/json" class="carousel-data">[
+              {"src":"./assets/perf-essay.png","alt":"Essay performance by LLM access timing.","caption":"Patterns reversed based on time availability. Under <em class='cond time-insufficient'>Insufficient</em> time, participants having LLM access from the start (<em class='cond cond-early'>Early</em>, <em class='cond cond-continuous'>Continuous</em> LLM access) outperformed those who worked independently first (<em class='cond cond-late'>Late</em>, <em class='cond cond-none'>No</em> LLM access). Notably, those having LLM access from the start showed minimal gains from <em class='cond time-insufficient'>Insufficient</em> to <em class='cond time-sufficient'>Sufficient</em> time."},
+              {"src":"./assets/perf-myside.png","alt":"Myside Bias by LLM access timing.","caption":"Under <em class='cond time-sufficient'>Sufficient</em> time, <em class='cond cond-late'>Late</em> LLM access reduced Myside Bias compared to <em class='cond cond-none'>No</em> LLM access, while maintaining argument quantity, whereas the stable low Myside Bias for <em class='cond cond-early'>Early</em> and <em class='cond cond-continuous'>Continuous</em> LLM access may reflect fewer arguments rather than balanced reasoning."},
+              {"src":"./assets/perf-arguments.png","alt":"Number of valid arguments by LLM access timing.","caption":"The number of valid arguments, as the primary component of the Essay score, showed a similar trend. Specifically, under <em class='cond time-sufficient'>Sufficient</em> time, <em class='cond cond-late'>Late</em> and <em class='cond cond-none'>No</em> LLM access showed similar argument quantity."},
+              {"src":"./assets/perf-recall.png","alt":"Recall performance by LLM access timing.","caption":"Under <em class='cond time-insufficient'>Insufficient</em> time, all LLM access timings showed similarly poor Recall. Under <em class='cond time-sufficient'>Sufficient</em> time, having LLM access from the start (<em class='cond cond-early'>Early</em>, <em class='cond cond-continuous'>Continuous</em> LLM access) impaired Recall compared to working independently first (<em class='cond cond-late'>Late</em>, <em class='cond cond-none'>No</em> LLM access)."},
+              {"src":"./assets/perf-evaluation.png","alt":"Evaluation correctness by LLM access timing.","caption":"Having <em class='cond time-sufficient'>Sufficient</em> time generally improved Evaluation correctness overall, with minimal differences between LLM access timings."},
+              {"src":"./assets/perf-comprehension.png","alt":"Comprehension correctness by LLM access timing.","caption":"Having <em class='cond time-sufficient'>Sufficient</em> time generally improved Comprehension correctness, with minimal differences between LLM access timings."}
+            ]</script>
+          </div>
+        </div>
+      </div>
+
+      <div class="subsection">
+        <h3 class="subsection-heading">Behavioral Engagement</h3>
+        <p class="body-text">Why would the benefits of having LLM access from the start (<em class="cond cond-early">Early</em>, <em class="cond cond-continuous">Continuous</em> LLM access) disappear when people have <em class="cond time-sufficient">Sufficient</em> time? We examined participants&rsquo; interaction logs to understand the mechanisms behind the temporal reversal. We found that participants having LLM access from the start showed <strong>minimal increase in unique arguments</strong> and <strong>document engagement during writing</strong> as time availability increased from <em class="cond time-insufficient">Insufficient</em> to <em class="cond time-sufficient">Sufficient</em> time. Having LLM access from the start appeared to limit further deliberation, narrow document engagement, and anchor participants to AI-provided framing. This potentially explains why having LLM access from the start boosts performance under <em class="cond time-insufficient">Insufficient</em> time with pressure &mdash; where efficiency matters most &mdash; but not when <em class="cond time-sufficient">Sufficient</em> time allows for the deeper reasoning that characterizes strong critical thinking.</p>
+
+        <p class="body-text">Browse the patterns below. See the <a class="text-link" href="https://arxiv.org/pdf/2603.08849" target="_blank" rel="noopener">paper</a> for additional findings on textual overlap and how participants having <em class="cond cond-late">Late</em> LLM access revised their essays to reduce Myside Bias.</p>
+
+        <div class="carousel-section">
+          <div class="findings-carousel" data-findings-carousel>
+            <div class="findings-carousel-body">
+              <button class="findings-carousel-btn" type="button" aria-label="Previous chart" data-dir="-1">
+                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M15 18L9 12L15 6" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </button>
+              <div class="findings-carousel-image-wrap">
+                <img src="./assets/engage-1.png" alt="Non-overlapping arguments between participants' essays and the LLM responses they received.">
+              </div>
+              <button class="findings-carousel-btn" type="button" aria-label="Next chart" data-dir="1">
+                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M9 6L15 12L9 18" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </button>
+            </div>
+            <p class="findings-carousel-caption"></p>
+            <div class="findings-carousel-indicators"></div>
+            <script type="application/json" class="carousel-data">[
+              {"src":"./assets/engage-1.png","alt":"Non-overlapping arguments between essays and LLM responses.","caption":"Did participants simply follow the LLM&rsquo;s arguments? By examining the overlap between arguments in each participant&rsquo;s essay and the LLM responses they received, we found that participants having <em class='cond cond-early'>Early</em> and <em class='cond cond-continuous'>Continuous</em> LLM access showed minimal increases in non-overlapping arguments from <em class='cond time-insufficient'>Insufficient</em> to <em class='cond time-sufficient'>Sufficient</em> time, while those having <em class='cond cond-late'>Late</em> and <em class='cond cond-none'>No</em> LLM access showed substantial increases. This suggests that having LLM access from the start may limit further deliberation, even when more task time is provided."},
+              {"src":"./assets/engage-2.png","alt":"Documents viewed during writing by LLM access timing.","caption":"How did participants engage with source documents before and during writing? We found that participants having <em class='cond cond-early'>Early</em> and <em class='cond cond-continuous'>Continuous</em> LLM access viewed fewer documents during writing, particularly under <em class='cond time-sufficient'>Sufficient</em> time. This suggests less iterative consultation of the sources and greater anchoring to LLM-provided initial framing, rather than further deliberation."},
+              {"src":"./assets/engage-3.png","alt":"Self-described task approaches by LLM access timing.","caption":"How did participants describe their approaches for the critical thinking task? Actually, the most common task approaches of participants having LLM access from the start (<em class='cond cond-early'>Early</em>, <em class='cond cond-continuous'>Continuous</em> LLM access) is not directly adopting AI-generated content. They used the LLM for summarizing documents or verifying ideas and concepts. But this type of LLM use seems to be enough to anchor their subsequent deliberation about which documents and ideas to pursue."}
+            ]</script>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= IMPLICATIONS ================= -->
+  <section class="content-section" id="implications">
+    <h2 class="section-heading">Implications</h2>
+    <div class="section-subsections">
+
+      <div class="subsection">
+        <h3 class="subsection-heading">For Designing AI Support for Critical Thinking</h3>
+        <div class="body-text">
+          <p>Our findings reveal that whether AI augments or undermines critical thinking depends crucially on the temporal context in which it is used. We highlight time as a central consideration for designing AI support for critical thinking.</p>
+          <ul class="impl-list">
+            <li><p><strong>With sufficient time, encourage independent thinking first.</strong> In our study, participants who worked independently before accessing the LLM showed the strongest critical thinking outcomes. AI systems can nudge users to form their own thoughts first &mdash; through prompts, frictions, or phased access &mdash; then augment their existing thinking.</p></li>
+            <li><p><strong>Under time pressure, using AI from the start is often inevitable.</strong> AI design should support this reality but with scaffolding to mitigate anchoring risks. Rather than simply verifying output accuracy, interventions should encourage users to consider deeper aspects of critical thinking, such as source diversity and alternative perspectives, to avoid suppressing further deliberation.</p></li>
+            <li><p><strong>Adapt AI support dynamically to users&rsquo; time availability.</strong> Rather than offering static assistance, AI systems should account for real-world temporal realities like procrastination and deadlines. Lightweight features &mdash; such as asking how much time is available or tracking session duration &mdash; can help tailor when and how AI is introduced.</p></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="subsection" id="research-implications">
+        <h3 class="subsection-heading">For Research on Human-AI Collaboration</h3>
+
+        <div class="research-table-wrap" id="updated-table">
+          <div class="research-table">
+            <div class="research-row research-header-row">
+              <div class="research-cell research-corner"></div>
+              <div class="research-cell research-col-hd"><strong>Early Access</strong></div>
+              <div class="research-cell research-col-hd"><strong>Continuous Access</strong></div>
+              <div class="research-cell research-col-hd"><strong>Late Access</strong></div>
+              <div class="research-cell research-col-hd"><strong>No Access</strong></div>
+            </div>
+            <div class="research-row">
+              <div class="research-cell research-row-hd"><strong>Insufficient Time</strong></div>
+              <div class="research-cell research-data"><p><span class="fw-reg">Essay: </span><span class="fw-semi">Moderate</span></p><p>Myside Bias: <span class="fw-semi">Moderate</span></p></div>
+              <div class="research-cell research-data"><p><span class="fw-reg">Essay: </span><span class="fw-semi">Moderate</span></p><p>Myside Bias: <span class="fw-semi">Moderate</span></p></div>
+              <div class="research-cell research-data"><p>Essay: Low</p><p>Myside Bias: <span class="fw-semi">Moderate</span></p></div>
+              <div class="research-cell research-data"><p>Essay: Low</p><p>Myside Bias: <span class="fw-semi">Moderate</span></p></div>
+            </div>
+            <div class="research-row">
+              <div class="research-cell research-row-hd"><strong>Sufficient Time</strong></div>
+              <div class="research-cell research-data"><p><span class="fw-reg">Essay: </span><span class="fw-semi">Moderate</span></p><p>Myside Bias: <span class="fw-semi">Moderate</span></p></div>
+              <div class="research-cell research-data"><p><span class="fw-reg">Essay: </span><span class="fw-semi">Moderate</span></p><p>Myside Bias: <span class="fw-semi">Moderate</span></p></div>
+              <div class="research-cell research-data"><p>Essay: <span class="fw-high">High</span></p><p>Myside Bias: Low</p></div>
+              <div class="research-cell research-data"><p>Essay: <span class="fw-high">High</span></p><p>Myside Bias: <span class="fw-high">High</span></p></div>
+            </div>
+          </div>
+
+          <div class="research-mobile-cards">
+            <div class="research-time-section">
+              <div class="research-time-heading">Insufficient Time</div>
+              <div class="research-access-group">
+                <div class="research-access-heading">Early Access</div>
+                <div class="research-result-card"><div class="research-result-title">Performance</div><div class="research-result-content"><p>Essay: <span class="fw-semi">Moderate</span></p><p>Myside Bias: <span class="fw-semi">Moderate</span></p></div></div>
+              </div>
+              <div class="research-access-group">
+                <div class="research-access-heading">Continuous Access</div>
+                <div class="research-result-card"><div class="research-result-title">Performance</div><div class="research-result-content"><p>Essay: <span class="fw-semi">Moderate</span></p><p>Myside Bias: <span class="fw-semi">Moderate</span></p></div></div>
+              </div>
+              <div class="research-access-group">
+                <div class="research-access-heading">Late Access</div>
+                <div class="research-result-card"><div class="research-result-title">Performance</div><div class="research-result-content"><p>Essay: Low</p><p>Myside Bias: <span class="fw-semi">Moderate</span></p></div></div>
+              </div>
+              <div class="research-access-group">
+                <div class="research-access-heading">No Access</div>
+                <div class="research-result-card"><div class="research-result-title">Performance</div><div class="research-result-content"><p>Essay: Low</p><p>Myside Bias: <span class="fw-semi">Moderate</span></p></div></div>
+              </div>
+            </div>
+            <div class="research-time-section">
+              <div class="research-time-heading">Sufficient Time</div>
+              <div class="research-access-group">
+                <div class="research-access-heading">Early Access</div>
+                <div class="research-result-card"><div class="research-result-title">Performance</div><div class="research-result-content"><p>Essay: <span class="fw-semi">Moderate</span></p><p>Myside Bias: <span class="fw-semi">Moderate</span></p></div></div>
+              </div>
+              <div class="research-access-group">
+                <div class="research-access-heading">Continuous Access</div>
+                <div class="research-result-card"><div class="research-result-title">Performance</div><div class="research-result-content"><p>Essay: <span class="fw-semi">Moderate</span></p><p>Myside Bias: <span class="fw-semi">Moderate</span></p></div></div>
+              </div>
+              <div class="research-access-group">
+                <div class="research-access-heading">Late Access</div>
+                <div class="research-result-card"><div class="research-result-title">Performance</div><div class="research-result-content"><p>Essay: <span class="fw-high">High</span></p><p>Myside Bias: Low</p></div></div>
+              </div>
+              <div class="research-access-group">
+                <div class="research-access-heading">No Access</div>
+                <div class="research-result-card"><div class="research-result-title">Performance</div><div class="research-result-content"><p>Essay: <span class="fw-high">High</span></p><p>Myside Bias: <span class="fw-high">High</span></p></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <p class="table-caption">This table summarizes our high-level findings on human-AI collaboration for critical thinking across all conditions in the two-dimensional space of time constraints. Text weight indicates performance level: <span class="fw-high">bold for High</span>, <span class="fw-semi">semi-bold for Moderate</span>, and <span class="fw-reg">regular for Low</span>.</p>
+
+        <div class="body-text">
+          <p>Research should consider time constraints when evaluating human-AI collaboration. Testing under multiple temporal conditions can reveal when benefits emerge or disappear &mdash; and our two-dimensional space of time constraints (<a class="text-link" href="#study-design">experiment framework</a>; <a class="text-link" href="#research-implications">high-level findings</a>) provides one approach for systematically doing so. Researchers do not need to examine every combination; rather, they should select conditions that align with their tasks, design choices, and research goals. Time availability should always be considered. Access timing, however, depends on the design choices and scope of the AI being studied. For example, studies that present pre-generated LLM responses cannot claim continuous LLM access, but the design can be framed as early access and paired with a condition where participants work independently first. Studies that provide interactive LLMs face different considerations: for unfamiliar tasks, early and continuous access may effectively converge as users tend to access AI from the beginning. But for tasks involving participants with diverse expertise, users may self-regulate and delay AI use, meaning continuous access cannot be assumed to function like early access.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= BIBTEX ================= -->
+  <section class="content-section no-divider" id="bibtex">
+    <h2 class="section-heading">BibTeX</h2>
+    <div class="bibtex-wrap">
+      <div class="bibtex-toolbar">
+        <button class="btn-copy" type="button">Copy</button>
+      </div>
+      <div class="bibtex-code-box">
+<pre class="bibtex-pre">@inproceedings{zhi2026investigating,
+  title={Investigating the Effects of LLM Use on Critical Thinking Under Time Constraints: Access Timing and Time Availability},
+  author={Zhi, Jiayin and Kumar, Harsh and Lee, Mina},
+  booktitle={Proceedings of the 2026 CHI Conference on Human Factors in Computing Systems},
+  series={CHI '26},
+  year={2026},
+  month={April},
+  location={Barcelona, Spain},
+  publisher={ACM},
+  address={New York, NY, USA},
+  pages={1--21},
+  doi={10.1145/3772318.3791796}
+}</pre>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="page-footer">
+  <p>&copy; 2026 by Jiayin Zhi.</p>
+</footer>
+
+</div>
+</div>
+<script src="./js/site.js?v=1785657424"></script>
+</body>
+</html>

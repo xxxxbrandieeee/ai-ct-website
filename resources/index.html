@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Resources &mdash; How does AI impact our critical thinking?</title>
+<meta name="description" content="Interface code, data, and analysis for Investigating the Effects of LLM Use on Critical Thinking Under Time Constraints (CHI 2026).">
+<link rel="canonical" href="https://criticalthinking-ai.app/resources/">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Resources — How does AI impact our critical thinking?">
+<meta property="og:description" content="Interface code, data, and analysis for the CHI 2026 study on LLM use and critical thinking under time constraints.">
+<meta property="og:url" content="https://criticalthinking-ai.app/resources/">
+
+<link rel="icon" href="../assets/icon1.png" type="image/png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=IBM+Plex+Serif:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+<div id="root">
+<div class="app-container">
+
+<nav class="top-nav">
+  <div class="nav-container">
+    <div class="nav-links">
+      <div class="nav-item dropdown" tabindex="0" role="button" aria-expanded="false" aria-haspopup="true">About
+        <svg class="nav-caret" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <div class="dropdown-menu">
+          <a class="dropdown-item" href="../#abstract">Abstract</a>
+          <a class="dropdown-item" href="../#background">Background</a>
+          <a class="dropdown-item" href="../#study-design">Study Design</a>
+          <a class="dropdown-item" href="../#findings">Findings</a>
+          <a class="dropdown-item" href="../#implications">Implications</a>
+        </div>
+      </div>
+      <div class="nav-item dropdown" tabindex="0" role="button" aria-expanded="false" aria-haspopup="true">Resources
+        <svg class="nav-caret" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <div class="dropdown-menu">
+          <a class="dropdown-item" href="#interface">Interface Code</a>
+          <a class="dropdown-item" href="#data-and-analysis">Data and Analysis</a>
+          <a class="dropdown-item" href="https://drive.google.com/file/d/1a0bivR8x90bY8ymF98oKZTo_c1lDBdV1/view" target="_blank" rel="noopener">Supplementary Materials</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<section class="content-section" id="interface">
+  <div class="content-container">
+    <h2 class="section-heading">Interface</h2>
+    <div class="resources-body">
+      <p class="body-text"><strong>[Overview]</strong> The interface is used for studying (1) how AI use affects critical thinking task performance and (2) how people use AI during critical thinking tasks. The critical thinking task asks participants to make a reasoned written decision based on a decision-making scenario and a set of documents of varying characteristics. The main task interface has three components: a document viewer, an LLM chatbot (if applicable for the experimental condition), and a text editor. It controls the access timing of the LLM chatbot and the time availability for task completion, enabling experiments within a two-dimensional time constraint space. After the task, participants sequentially restate their decision, complete a free recall assessment, evaluate document characteristics, and answer comprehension questions.</p>
+
+      <p class="body-text"><strong>What it logs:</strong> The interface captures keystroke, cursor, and navigation events across all panels, enabling analysis of how participants move between reading, using the LLM, and writing throughout the task. These raw logs yield behavioral metrics at different granularities &mdash; see the <a class="text-link" href="https://github.com/xxxxbrandieeee/critical-thinking-data-dictionary" target="_blank" rel="noopener">data dictionary</a> for how these metrics are derived, including those that show notable patterns in our paper.</p>
+
+      <div class="section-body">
+        <p><strong>For reuse:</strong></p>
+        <ul class="measure-list">
+          <li>The interface can be used for human-centered experiments on AI&rsquo;s impact on critical thinking and other cognitive tasks involving a non-linear process of reading and writing. Researchers can replace the task scenario and documents, and revise or skip the post-task questions.</li>
+          <li>The time constraint controls can be configured independently, or researchers can use the two base versions (with or without the LLM) without any time constraints.</li>
+        </ul>
+        <div class="resource-buttons">
+          <a class="resource-btn" href="https://github.com/xxxxbrandieeee/critical-thinking-interface" target="_blank" rel="noopener">Interface Code<span class="btn-chip"><svg class="btn-arrow" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="content-section no-divider" id="data-and-analysis">
+  <div class="content-container">
+    <h2 class="section-heading">Data and Analysis</h2>
+    <div class="resources-body">
+      <div class="resources-button">
+        <a class="btn-primary" href="https://github.com/xxxxbrandieeee/critical-thinking-analysis" target="_blank" rel="noopener">Data and Analysis<span class="btn-chip"><svg class="btn-arrow" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="page-footer">
+  <p>&copy; 2026 by Jiayin Zhi.</p>
+</footer>
+
+</div>
+</div>
+<script src="../js/site.js?v=1785657011"></script>
+</body>
+</html>
